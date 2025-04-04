@@ -29,7 +29,13 @@
 
     <h1 style="text-align: center">Galería deportiva.</h1>
 
-    <div class="galeria">
+    <div style="text-align: center; margin-bottom: 20px;">
+      <input type="text" id="imagenURL" placeholder="URL de la imagen" />
+      <input type="text" id="pieFoto" placeholder="Pie de foto" />
+      <button onclick="agregaImagen()">Añadir imagen</button>
+    </div>
+
+    <div class="galeria" id="galeriaImagenes">
         <div>
           <img
             src="./imgs/man-jumping-while-doing-parkour.jpg"
@@ -68,5 +74,45 @@
         </div>
       </div>
     </div>
+
+    <script>
+        function agregaImagen (){
+          var url = document.getElementById("imagenURL").value;// Obtener la URL de la imagen, value recoge el valor del input.
+
+          var pie = document.getElementById("pieFoto").value;// Obtener el pie de foto, value recoge el valor del input.
+
+          if (url && pie ) {// Verificar si la URL o el pie de foto están vacíos.
+            
+          
+
+          var galeria = document.getElementById("galeriaImagenes");// Obtener el elemento de la galería.
+
+          var div = document.createElement("div");// Crear un nuevo elemento div.
+
+          var img = document.createElement("img");// Crear un nuevo elemento img.
+
+          var p = document.createElement("p");// Crear un nuevo elemento p.
+
+          img.src = url;// Asignar la URL de la imagen al atributo src del elemento img.
+
+          img.width = 300;// Asignar el ancho de la imagen.
+          img.height = 250;// Asignar la altura de la imagen.
+          
+
+          p.textContent = pie;// Asignar el pie de foto al contenido de texto del elemento p.
+
+          div.appendChild(img);// Añadir el elemento img al div.
+
+          div.appendChild(p);// Añadir el elemento p al div.
+
+          galeria.appendChild(div);// Añadir el div con la imágen y el párrafo a la galería.
+
+          document.getElementById("imagenURL").value = "";// Limpiar el campo de la URL de la imagen.
+          document.getElementById("pieFoto").value = "";// Limpiar el campo del pie de foto.
+          }else{
+            alert("Por favor, completa ambos campos.");
+          }
+        }
+    </script>
   </body>
 </html>
