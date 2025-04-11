@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+.centrarElementos{
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.resultado{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+body{
+  background-image: url(./assets/mony.jpg);
+}
