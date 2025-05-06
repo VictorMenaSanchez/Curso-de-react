@@ -30,4 +30,5 @@ justify-content: center;
     transform: translateY(4px)
     color:yellow;
   }
-`;
+`
+;
