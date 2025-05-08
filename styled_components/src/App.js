@@ -7,15 +7,15 @@ function App() {
   return (
     <div className="App">
      <div>
-     <MiCaja>
+     <MiCaja entrar = {true}>
         Entrar
       </MiCaja>
      </div>
-        <div>
-          <MiBotonLargo>
-            Salir
-          </MiBotonLargo>
-        </div>
+     <div>
+     <MiCaja entrar = {false}>
+        Salir
+      </MiCaja>
+     </div>
     </div>
 
   );

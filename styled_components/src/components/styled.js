@@ -1,11 +1,16 @@
 import styled from 'styled-components';
+import { css } from 'styled-components';
 
-export const MiCaja = styled.div`
-    width: 120px;
+const medidaAncho = 900;
+
+const moviles = `@media (max-width: ${medidaAncho}px) `;
+
+export const EstilosGlobales = css`
+  width: 720px;
   height: 50px;
   margin: 20px;
-  background-color: #007bff;
-  color: white;
+  //background-color:${({entrar}) => (entrar ? 'green' : 'red')};
+  //color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -28,7 +33,24 @@ justify-content: center;
     box-shadow: inset 6px 6px 15px rgba(0, 0, 0, 0.3),
                 inset -6px -6px 15px rgba(255, 255, 255, 0.4);
     transform: translateY(4px)
-    color:yellow;
+    
+  }
+  ${moviles}{
+    width: 50%;
+    
   }
 `
-;
+  
+
+export const MiCaja = styled.div`
+  ${({entrar}) => entrar ? css`
+    ${EstilosGlobales};
+    
+    background-color: green;
+    color: white;
+  ` : css`
+    ${EstilosGlobales};
+    
+    background-color: red;
+  `}
+`;
