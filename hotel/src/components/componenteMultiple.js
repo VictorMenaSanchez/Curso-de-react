@@ -1,3 +1,6 @@
+
+export default ComponenteMultiple;
+
 const ComponenteMultiple = ({opcion, dias}) => {
     const calculoCosteHotel = () => {
         let coste = dias * 50;
@@ -19,5 +22,3 @@ const ComponenteMultiple = ({opcion, dias}) => {
     }
     return <div>{opcion===1?calculoCosteHotel(): opcion===2?calculoAlquilerCoche():""}</div>
 }
-
-export default ComponenteMultiple;
